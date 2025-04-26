@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { TextEditorContainer } from './textEditor/components/TextEditorContainer'
+import { useState, useRef, useEffect } from "react";
+
+import "./App.css";
+import { TextEditorContainer } from "./textEditor/components/TextEditorWrapper";
 
 function App() {
-
   return (
-    <TextEditorContainer />
-  )
+    <>
+      <TextEditorContainer />
+    </>
+  );
 }
 
-export default App
+export default App;
