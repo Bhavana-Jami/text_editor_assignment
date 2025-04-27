@@ -16,10 +16,11 @@ export const Toolbar = ({ handleFormat, clicked, setDropDownValue }) => {
         setDropDownValue={setDropDownValue}
         handleFormat={handleFormat}
       />
-      
+
       {/* Format buttons */}
       {formats.map((item, index) => (
         <button
+          aria-label={item.label}
           key={index}
           onClick={() => handleFormat(item.format)}
           style={{

@@ -33,11 +33,15 @@ export const DropDown = ({ setDropDownValue, handleFormat }) => {
     <form>
       <select
         onChange={handleDropDownChange}
-        label="select the font size"
+        aria-label="select the font size"
         className="bg-gray-50 py-3 px-4 text-gray-900 text-xl focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       >
         {options.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option
+            key={option.value}
+            value={option.value}
+            aria-label={option.label}
+          >
             {option.label}
           </option>
         ))}
