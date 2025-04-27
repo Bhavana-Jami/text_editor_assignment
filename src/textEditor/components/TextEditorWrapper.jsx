@@ -1,7 +1,7 @@
 import { Toolbar } from "./Toolbar";
 import { ContentBox } from "./ContentBox";
 import { useRef, useState, useEffect } from "react";
-export const TextEditorContainer = () => {
+export const TextEditorWrapper = () => {
   const editorRef = useRef(null);
   const [content, setContent] = useState("");
   const [clicked, setClicked] = useState([]);
@@ -121,7 +121,6 @@ export const TextEditorContainer = () => {
         handleFormat={handleFormat}
         setDropDownValue={setDropDownValue}
       />
-      <p>{content}</p>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import "./App.css";
-import { TextEditorContainer } from "./textEditor/components/TextEditorWrapper";
+import { TextEditorWrapper } from "./textEditor/components/TextEditorWrapper";
 
 function App() {
-  return <TextEditorContainer />;
+  return <TextEditorWrapper />;
 }
 
 export default App;
