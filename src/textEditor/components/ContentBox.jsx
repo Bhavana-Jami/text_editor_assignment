@@ -6,7 +6,7 @@ export const ContentBox = (props) => {
       ref={props.editorRef}
       contentEditable="true"
       id="text_editor_wrapper"
-      className=" bg-sky-100 h-1/1 p-4 text-black overflow-auto text-3xl flex justify-items-end "
+      className=" bg-sky-100 h-85 p-4 text-black overflow-auto text-3xl flex justify-items-end "
       onInput={props.handleInput}
     ></div>
   );

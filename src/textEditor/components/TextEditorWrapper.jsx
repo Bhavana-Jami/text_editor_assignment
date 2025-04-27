@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 export const TextEditorContainer = () => {
   const editorRef = useRef(null);
   const [content, setContent] = useState("");
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState([]);
   // Load saved content from localStorage
   useEffect(() => {
     const savedContent = localStorage.getItem("textEditorContent");
@@ -21,13 +21,24 @@ export const TextEditorContainer = () => {
   };
   // Bold the selected text
   const handleFormat = (formatType) => {
-    setClicked(!clicked);
+    //making formattype bold, toggling on and off for identification
+    setClicked((prevClicked) =>
+      prevClicked.includes(formatType)
+        ? prevClicked.filter((item) => item !== formatType)
+        : [...prevClicked, formatType]
+    );
     switch (formatType) {
       case "bold":
         document.execCommand("bold", false, null);
-        break;
+        // break;
       case "italic":
         document.execCommand("italic", false, null);
+        // break;
+      case "underline":
+        document.execCommand("underline", false, null);
+        // break;
+      case "strikethrough":
+        document.execCommand("strikethrough", false, null);
         break;
       default:
         break;
@@ -36,7 +47,10 @@ export const TextEditorContainer = () => {
   };
 
   return (
-    <div className="container w-8xl " style={{ border: "1px solid grey" }}>
+    <div
+      className="container w-8xl h-100vh"
+      style={{ border: "1px solid grey" }}
+    >
       <Toolbar handleFormat={handleFormat} clicked={clicked} />
       <ContentBox
         editorRef={editorRef}
