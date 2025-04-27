@@ -1,3 +1,25 @@
 [contenteditable] {
   outline: 0px solid transparent;
 }
+#text_editor_wrapper h1 {
+  font-size: 32px; 
+  font-weight: bold;
+}
+
+#text_editor_wrapper h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#text_editor_wrapper h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#text_editor_wrapper h4 {
+  font-size: 20px;
+}
+
+#text_editor_wrapper p {
+  font-size: 16px; 
+}
